@@ -18,13 +18,15 @@ class Automobile:                                   #classe usata per creare ogg
     numero_di_ruote = 4
     
     #Costruttore (definisce attributi necessari per la creazione della classe)
-    def __init__(self, marca, modello):             #__init__ dunder method (double under __), metodi speciali che esistono anche quando non definiti
+    #metodo speciale
+    def __init__(self, marca, modello):             #__init__ dunder method (double under __), metodi SPECIALI che esistono anche quando non definiti
         
         #attributi
         self.marca = marca                          #self, modo per rifersi all'oggetto stesso all'interno della dichiarazione della classe
         
         self.modello = modello
     
+    #metodo normale
     def stampa_info(self):
         
         print("L'automobile è una", self.marca, self.modello)
@@ -72,7 +74,9 @@ class Contatore:
     
     def __init__(self):
         Contatore.numero_istanze += 1
+        print(Contatore.numero_istanze)
         self.numero_istanze += 1
+        print(self.numero_istanze)
         
     @classmethod
     def mostra_numero_istanze(cls):
@@ -83,7 +87,9 @@ c2 = Contatore()
 c3 = Contatore()
     
 print(c1.numero_istanze)
+Contatore.mostra_numero_istanze()
 print(c2.numero_istanze)
+Contatore.mostra_numero_istanze()
 print(c3.numero_istanze)
 Contatore.mostra_numero_istanze()
     

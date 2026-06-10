@@ -1,6 +1,6 @@
 #Esercizio 2: Crea classe Libro con metodi descritti
 
-'''
+
 #Restituisce False se l'utente vuole uscire, True altrimenti. Necessita di string per il messaggio di input
 def checkRepeat(message:str):
     scelta = input(message)
@@ -8,10 +8,10 @@ def checkRepeat(message:str):
         return False
     else:
         return True
-'''
+
 
 class Libro:
-
+    #Costruttore
     def __init__(self, titolo, autore, pagine):
         self.titolo = titolo
         self.autore = autore
@@ -25,10 +25,20 @@ class Libro:
 libro1 = Libro("Il colore della Magia", "Terry Pratchet", 310)
 libro1.descrizione()
 
-'''
+libri = [libro1]
+i=0
+
 repeat = True
 while repeat:
-    
+    #Utente inserisce libro
+    print("Inserisci nuovo libro:")
+    titolo = input("Titolo: ")
+    autore = input("Autore: ")
+    pagine = input("Numero Pagine: ")
+    libri.append(Libro(titolo, autore, pagine))
+    i+=1
+    #Test del metodo descrizione
+    libri[i].descrizione()
     repeat = checkRepeat("Vuoi continuare ad aggiungere libri?\n")           #Check di uscita    
-'''
+
 
